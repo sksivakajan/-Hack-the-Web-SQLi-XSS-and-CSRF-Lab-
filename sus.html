@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Congratulations </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .congratulations {
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+            border: 2px solid #fff;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: bounce 1s infinite alternate;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .flag {
+            margin-top: 20px;
+            font-size: 2em;
+            color: #ffeb3b;
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+
+<div class="congratulations">
+    <h1>Congratulations!</h1>
+    <p>You solved the lab!</p>
+    <div class="flag">Flag: <span id="flag"></span></div>
+    <button class="button" onclick="goBack()">Go Back to Home</button>
+</div>
+
+<script>
+    // Function to retrieve the bug type from the URL and display the flag
+    function getFlag() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const bugType = urlParams.get('bug');
+        let flag;
+
+        switch (bugType) {
+            case 'sql-injection':
+                flag = 'FLAG{SQL_INJECTION_SUCCESS}';
+                break;
+            case 'dom-xss':
+                flag = 'FLAG{DOM_XSS_SUCCESS}';
+                break;
+            case 'csrf':
+                flag = 'FLAG{CSRF_SUCCESS}';
+                break;
+            case 'clickjacking':
+                flag = 'FLAG{CLICKJACKING_SUCCESS}';
+                break;
+            default:
+                flag = 'No flag available.';
+        }
+
+        document.getElementById('flag').innerText = flag;
+    }
+
+    // Function to navigate back to the home page
+    function goBack() {
+        window.location.href = "index.html";
+    }
+
+    // Call getFlag to display the flag when the page loads
+    window.onload = getFlag;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Security - Home</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>WEB SECURITY -IE2062</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <form action="result.php" method="GET">
+                <label for="search">Enter a search term:</label>
+                <input type="text" id="search" name="search" placeholder="Type your search here">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+       
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>SRILANAKA INSTITUE OF INFORMATION TECHNOLOGY </h1>
+                <h1>FUCULTY OF COMPUTING CYBER SECURITY</h1>
+                <p>"In cybersecurity, a bug is not just a flaw; it’s an opportunity to make systems stronger. Every vulnerability discovered is a step toward a more secure future."</p>
+                <a href="login.html" class="cta-button">Get Started</a>
+            </div>
+            <img src="img.png" alt="uni logo" class="logo">
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>CREATE BY :</h3>
+                <p>KAJAN S</p>
+                <p>IT22257536</p>
+            </div>
+            <div class="feature">
+                <h3>Vulnerability -01</h3>
+                <p>SQL Injection</p>
+            </div>
+            <div class="feature">
+                <h3>Vulnerability -02</h3>
+                <p>reflected XSS</p>
+            </div>
+            <div class="feature">
+                <h3>Vulnerability -03 </h3>
+                <p>CSRF</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <br>
+        <p>&copy; 2024 KAJAN S. All rights reserved.</p>
+        <br>
+       
+    </footer>
+
+</body>
+</html>
