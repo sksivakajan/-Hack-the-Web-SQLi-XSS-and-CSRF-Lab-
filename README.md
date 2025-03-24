@@ -1,7 +1,3 @@
-Here’s a more in-depth write-up for your TryHackMe room, explaining the vulnerabilities in detail, the exploitation process, and ways to mitigate each issue:
-
----
-
 ### Write-Up: Vulnerability Triad – SQLi, Reflected XSS, and CSRF
 
 In this TryHackMe room, you worked through three of the most common vulnerabilities found in web applications: **SQL Injection (SQLi)**, **Reflected Cross-Site Scripting (XSS)**, and **Cross-Site Request Forgery (CSRF)**. Let’s dive deeper into each of these, how they work, how you exploited them, and how they can be prevented.
